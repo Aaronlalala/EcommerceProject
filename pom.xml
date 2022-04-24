@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>EcommerceCommon</module>
+        <module>EcommerceWebParent</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
