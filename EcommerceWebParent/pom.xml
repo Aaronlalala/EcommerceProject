@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>EcommerceBackEnd</module>
+        <module>EcommerceFrontEnd</module>
     </modules>
 
     <properties>
