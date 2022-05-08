@@ -1,5 +1,6 @@
-package com.cuhksz.admin.database;
+package com.cuhksz.admin.repository;
 
+import com.cuhksz.admin.entity.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
