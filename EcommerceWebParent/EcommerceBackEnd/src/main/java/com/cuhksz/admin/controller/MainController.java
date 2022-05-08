@@ -1,13 +1,14 @@
-package com.cuhksz.admin;
+package com.cuhksz.admin.controller;
 
-import com.cuhksz.admin.database.User;
-import com.cuhksz.admin.database.UserRepository;
+import com.cuhksz.admin.entity.User;
+import com.cuhksz.admin.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import java.sql.Date;
 
 @Controller
 public class MainController {
@@ -24,9 +25,9 @@ public class MainController {
     public @ResponseBody String addNewUser (@RequestParam String name
             , @RequestParam String email, @RequestParam String password) {
         User n = new User();
-        n.setUsername(name);
-        n.setEmail(email);
+        n.setFullName(name);
         n.setPassword(password);
+        n.setCreatedAt(new Date(System.currentTimeMillis()));
         userRepository.save(n);
         return "Saved";
     }
