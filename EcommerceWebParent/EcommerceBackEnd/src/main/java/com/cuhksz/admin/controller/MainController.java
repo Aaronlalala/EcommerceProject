@@ -27,6 +27,7 @@ public class MainController {
         User n = new User();
         n.setFullName(name);
         n.setPassword(password);
+        n.setEmail(email);
         n.setCreatedAt(new Date(System.currentTimeMillis()));
         userRepository.save(n);
         return "Saved";
