@@ -14,10 +14,18 @@ class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String fullName;
-
+    private String email;
     private Date createdAt;
     private String password;
     private String bankAccount;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getBankAccount() {
         return bankAccount;
