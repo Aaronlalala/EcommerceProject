@@ -13,9 +13,8 @@ public class Product {
     private String name;
     private float price;
     private float cost;
-    private String type;
+    private String category;
     private Date createdAt;
-    private int shelflifeDays;
     private int product_selector;
 
     public String getName() {
@@ -42,12 +41,12 @@ public class Product {
         this.cost = cost;
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCategory(String type) {
+        this.category = type;
     }
 
     public Date getCreatedAt() {
@@ -56,14 +55,6 @@ public class Product {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public int getShelflifeDays() {
-        return shelflifeDays;
-    }
-
-    public void setShelflifeDays(int shelflifeDays) {
-        this.shelflifeDays = shelflifeDays;
     }
 
     public int getProduct_selector() {
