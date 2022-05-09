@@ -9,17 +9,8 @@ public class Advertisement {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private int optimizer;
     private int deliverCompany;
     private float cost;
-
-    public int getOptimizer() {
-        return optimizer;
-    }
-
-    public void setOptimizer(int optimizer) {
-        this.optimizer = optimizer;
-    }
 
     public int getDeliverCompany() {
         return deliverCompany;
