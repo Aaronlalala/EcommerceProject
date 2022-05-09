@@ -2,9 +2,17 @@ package com.cuhksz.admin.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
+import java.io.Serializable;
+
+class MakePaymentRelationId implements Serializable {
+    private Integer paymentId;
+    private Integer orderId;
+}
 
 @Entity
+@IdClass(MakePaymentRelationId.class)
 @Table(name = "make_payment_relation")
 public class MakePaymentRelation {
     @Id
