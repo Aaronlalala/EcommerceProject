@@ -7,10 +7,14 @@ import javax.persistence.*;
 public class Warehouse {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer warehouseId;
+    private Integer id;
 
     private int manager;
     private float rent;
+
+    public Integer getId() {
+        return id;
+    }
 
     public int getManager() {
         return manager;
