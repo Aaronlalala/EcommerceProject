@@ -2,9 +2,18 @@ package com.cuhksz.admin.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
+import java.io.Serializable;
+
+class MakeAdvertisementRelationId implements Serializable {
+    private Integer adId;
+    private Integer adminId;
+    private Integer productId;
+}
 
 @Entity
+@IdClass(MakeAdvertisementRelationId.class)
 @Table(name = "make_advertisement_relation")
 public class MakeAdvertisementRelation {
     @Id

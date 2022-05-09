@@ -1,8 +1,15 @@
 package com.cuhksz.admin.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
+
+class ProductInventoryRelationId implements Serializable {
+    private Integer warehouseId;
+    private Integer productId;
+}
 
 @Entity
+@IdClass(ProductInventoryRelationId.class)
 @Table(name = "product_inventory_relation")
 public class ProductInventoryRelation {
     @Id

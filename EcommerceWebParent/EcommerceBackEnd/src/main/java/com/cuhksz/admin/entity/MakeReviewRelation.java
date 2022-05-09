@@ -1,8 +1,15 @@
 package com.cuhksz.admin.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
+
+class MakeReviewRelationId implements Serializable {
+    private Integer reviewId;
+    private Integer orderId;
+}
 
 @Entity
+@IdClass(MakeReviewRelationId.class)
 @Table(name = "make_review_relation")
 public class MakeReviewRelation {
     @Id
