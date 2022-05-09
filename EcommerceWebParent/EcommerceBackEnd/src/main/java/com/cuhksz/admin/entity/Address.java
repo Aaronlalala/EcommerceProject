@@ -8,31 +8,71 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private Integer userId;
-    private Integer regionId;
+    private String continetName;
+    private Integer countryCode;
+    private String stateName;
+    private String cityName;
+    private float longt;
+    private float lat;
     private String streetName;
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserId(Integer user_id) {
-        this.userId = user_id;
+    public String getContinetName() {
+        return continetName;
     }
 
-    public Integer getRegionId() {
-        return regionId;
+    public void setContinetName(String continetName) {
+        this.continetName = continetName;
     }
 
-    public void setRegionId(Integer region_id) {
-        this.regionId = region_id;
+    public Integer getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(Integer countryCode) {
+        this.countryCode = countryCode;
+    }
+
+    public String getStateName() {
+        return stateName;
+    }
+
+    public void setStateName(String stateName) {
+        this.stateName = stateName;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public float getLongt() {
+        return longt;
+    }
+
+    public void setLongt(float longt) {
+        this.longt = longt;
+    }
+
+    public float getLat() {
+        return lat;
+    }
+
+    public void setLat(float lat) {
+        this.lat = lat;
     }
 
     public String getStreetName() {
         return streetName;
     }
 
-    public void setStreetName(String street_name) {
-        this.streetName = street_name;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
 }
