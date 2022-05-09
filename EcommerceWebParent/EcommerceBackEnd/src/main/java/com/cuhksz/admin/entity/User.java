@@ -47,10 +47,6 @@ class User {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public void setFullName(String username) {
         this.fullName = username;
     }
@@ -64,6 +60,6 @@ class User {
 
     public boolean checkPassword(String password) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        return encoder.encode(password).equals(this.password);
+        return encoder.matches(password, this.password);
     }
 }
