@@ -10,7 +10,7 @@ public class MakeOrderRelation {
     private Integer orderId;
 
     private Integer userId;
-    private Integer produceId;
+    private Integer productId;
     private Integer quantity;
     private Date createdAt;
     private String status;
@@ -31,12 +31,12 @@ public class MakeOrderRelation {
         this.userId = userId;
     }
 
-    public Integer getProduceId() {
-        return produceId;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProduceId(Integer produceId) {
-        this.produceId = produceId;
+    public void setProductId(Integer produceId) {
+        this.productId = produceId;
     }
 
     public Integer getQuantity() {
