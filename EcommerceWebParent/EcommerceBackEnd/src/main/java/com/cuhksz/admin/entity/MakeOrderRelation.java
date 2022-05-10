@@ -7,6 +7,7 @@ import java.sql.Date;
 @Table(name = "make_order_relation")
 public class MakeOrderRelation {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer orderId;
 
     private Integer userId;
@@ -14,10 +15,6 @@ public class MakeOrderRelation {
     private Integer quantity;
     private Date createdAt;
     private String status;
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
 
     public Integer getOrderId() {
         return orderId;
