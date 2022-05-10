@@ -1,24 +1,32 @@
 package com.cuhksz.admin.controller;
 
+import com.cuhksz.admin.controller.form.AddOrder;
 import com.cuhksz.admin.controller.form.LoginUser;
 import com.cuhksz.admin.controller.form.RegisterUser;
+import com.cuhksz.admin.entity.MakeOrderRelation;
 import com.cuhksz.admin.entity.User;
 import com.cuhksz.admin.repository.MakeAdvertisementRelationRepository;
+import com.cuhksz.admin.repository.MakeOrderRelationRepository;
 import com.cuhksz.admin.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
 public class MainController {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
     private MakeAdvertisementRelationRepository adRelationRepository;
+    @Autowired
+    private MakeOrderRelationRepository orderRepository;
 
-// Handle the HTTP GET request to the admin page of the application.
+    // Handle the HTTP GET request to the admin page of the application.
     @GetMapping(value="/homepage")
     public String viewHomePage() {
         return "index";
@@ -58,6 +66,23 @@ public class MainController {
             }
         }
         return "No such user";
+    }
+
+    @PostMapping(path = "/add/order")
+    public @ResponseBody Object addOrder(@ModelAttribute AddOrder formData) {
+        MakeOrderRelation order = new MakeOrderRelation();
+        order.setCreatedAt(new Date(System.currentTimeMillis()));
+        order.setQuantity(formData.getQuantity());
+        order.setStatus(formData.getStatus());
+        order.setUserId(formData.getUserId());
+        order.setProductId(formData.getProductId());
+        return orderRepository.save(order);
+    }
+
+    @GetMapping(path = "/query/order")
+    public @ResponseBody Iterable<Object> queryOrderByTime(@RequestParam long start, @RequestParam long end) {
+        List<MakeOrderRelation> res = orderRepository.findAllByCreatedAtBetween(new Date(start), new Date(end));
+        return Collections.singleton(res);
     }
 
     @GetMapping("/list")
